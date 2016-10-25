@@ -11,7 +11,7 @@ response = Net::HTTP.start(uri.hostname, uri.port) do |http| # Save response
   http.request(request) # Send request
 end
 
-jbody = JSON.parse(response.body) # reverse the string
+jbody = JSON.parse(response.body) # parse to JSON
 
 hindex = jbody["haystack"].index(jbody["needle"]) # lookup index of string
 
